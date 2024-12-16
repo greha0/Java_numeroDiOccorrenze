@@ -41,9 +41,30 @@ public class arrayInteri {
         return numOcc;
     }
 
+    static public int [] unioneArray(int [] array1, int [] array2){
+        int [] arrayUnito = new int[array1.length + array2.length];
+        int cont=array1.length;
+
+        for(int i=0; i< array1.length; i++){
+            arrayUnito[i] = array1[i];
+        }
+        for(int i = 0; i<array2.length; i++){
+            arrayUnito[cont] = array2[i];
+            cont++;
+        }
+        return arrayUnito;
+    }
+
     static public void main(String [] args){
         int [] array = {1,2,3,3,4,4};
+        int [] array1 = {123,44,6};
+        int [] unione = unioneArray(array, array1);
 
-        System.out.println(contaOccorrenze(3, array));
+        System.out.println("Occorrenze numero 3: "+contaOccorrenze(3, array));
+
+        System.out.println("Array unito: ");
+        for(int i=0; i<unione.length; i++){
+            System.out.println(unione[i]);
+        }
     }
 }
